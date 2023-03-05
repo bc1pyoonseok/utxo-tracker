@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 
-class csvParser:
+class CsvParser:
     def __init__(
         self,
         csv_file_name,
