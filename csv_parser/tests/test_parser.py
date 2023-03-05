@@ -3,16 +3,16 @@ import sys
 import pytest
 
 try:
-    import csv_parser
+    import dump_parser
 except ModuleNotFoundError:
     parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     sys.path.insert(0, parent_dir)
-    import csv_parser
+    import dump_parser
 
 
 def test_csv_parser():
-    parser = csv_parser.csvParser('test.csv')
-    assert parser.csv_parser() == [
+    parser_for_test = dump_parser.CsvParser('test.csv')
+    assert parser_for_test.csv_parser() == [
         {
             'amount': '9466355',
             'address': '1LpCmEejWLNfZigApMPwUY9nZTS8NTJCNS',
@@ -57,8 +57,8 @@ def test_csv_parser():
 
 
 def test_output_parser():
-    parser = csv_parser.csvParser('test.csv')
-    assert (parser.output_parser(
+    parser_for_test = dump_parser.CsvParser('test.csv')
+    assert (parser_for_test.output_parser(
         "033e83e3204b0cc28724e147f6fd140529b2537249f9c61c9de9972750030000",
         65279,
         "1KaPHfvVWNZADup3Yc26SfVdkTDvvHySVX",
