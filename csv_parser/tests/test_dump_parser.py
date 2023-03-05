@@ -1,9 +1,6 @@
 import csv
-import datetime
-import time
 import os
 import sys
-from urllib import response
 import pytest
 
 import requests_mock
